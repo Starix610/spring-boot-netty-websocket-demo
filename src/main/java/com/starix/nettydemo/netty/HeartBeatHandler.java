@@ -29,7 +29,7 @@ public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
             } else if (event.state() == IdleState.ALL_IDLE) {
                 Channel channel = ctx.channel();
                 // 关闭超时未发送心跳包的无用的channel，以防资源浪费
-                log.info("即将关闭超时未收到心跳包的channel: [{}]，current userChannels size: {}", channel.id().asShortText(), MessageHandler.userChannels.size());
+                log.info("即将关闭超时未收到心跳包的channel: [{}]，current userChannels size: {}", channel.id().asShortText(), WebSocketHandler.userChannels.size());
                 channel.close();
             }
         }

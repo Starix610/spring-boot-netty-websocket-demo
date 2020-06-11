@@ -37,6 +37,6 @@ public class WSServerInitialzer extends ChannelInitializer<SocketChannel> {
                  */
                 .addLast(new WebSocketServerProtocolHandler("/ws"))
                 // 自定义的handler
-                .addLast("MessageHandler", new MessageHandler());
+                .addLast("MessageHandler", new WebSocketHandler());
     }
 }
